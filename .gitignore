@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+web-build/
+
+# Expo (phase 2)
+.expo/
+.expo-shared/
+
+# Native (phase 2)
+ios/Pods/
+*.xcworkspace
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Coverage / tests
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
