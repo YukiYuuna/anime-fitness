@@ -30,3 +30,6 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 .idea/
+
+# Superpowers subagent-driven-development scratch (ephemeral)
+.superpowers/

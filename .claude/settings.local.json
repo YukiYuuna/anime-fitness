@@ -5,7 +5,12 @@
       "Bash(npm install *)",
       "Bash(echo \"---EXIT: $?---\")",
       "Bash(echo \"lint exit: $?\")",
-      "Bash(echo \"typecheck exit: $?\")"
+      "Bash(echo \"typecheck exit: $?\")",
+      "Bash($SKILL/scripts/task-brief $PLAN *)",
+      "Bash(prettier *)",
+      "Bash(grep *)",
+      "Bash(npx prettier *)",
+      "Bash(git ls-tree *)"
     ]
   }
 }

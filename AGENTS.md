@@ -4,6 +4,12 @@ This is the **single source of truth** for how this repository is built. It is
 read by every AI assistant (Claude Code, Codex) and human contributor. Read it
 fully before doing any work.
 
+For the architecture map (folder structure, what each folder is for, and
+constraint-driven decisions), see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md).
+**Keep it updated**: any change that adds, removes, or meaningfully
+restructures a folder, module, or major dependency must update
+`PROJECT_CONTEXT.md` in the same PR/commit.
+
 > The app is **Expo / React Native + TypeScript**, iOS-first with Android
 > planned. Phase 1 (current) sets up collaboration tooling; the app itself is
 > phase 2.
@@ -25,6 +31,9 @@ fully before doing any work.
   scoped so the two contributors rarely touch the same files.
 - **Definition of done:** `npm run lint`, `npm run typecheck`, and (once tests
   exist) `npm run test` all pass; PR template complete; scope described.
+- **Feature tracking:** every feature is a card in `docs/features/`
+  (`backlog/` → `in-progress/` → `done/`). See
+  [development_process.md](./development_process.md) for the full lifecycle.
 
 ## 2. Coding Standards
 
