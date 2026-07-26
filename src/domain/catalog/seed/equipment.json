@@ -1,0 +1,5 @@
+[
+  { "id": "barbell", "name": "Barbell" },
+  { "id": "dumbbell", "name": "Dumbbell" },
+  { "id": "body-only", "name": "Body Only" }
+]

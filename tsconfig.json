@@ -11,7 +11,11 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"],
   "exclude": ["node_modules", "dist", "build", ".expo"]

@@ -1,0 +1,16 @@
+[
+  { "id": "chest", "name": "Chest" },
+  { "id": "triceps", "name": "Triceps" },
+  { "id": "shoulders", "name": "Shoulders" },
+  { "id": "lats", "name": "Lats" },
+  { "id": "middle-back", "name": "Middle Back" },
+  { "id": "lower-back", "name": "Lower Back" },
+  { "id": "biceps", "name": "Biceps" },
+  { "id": "forearms", "name": "Forearms" },
+  { "id": "traps", "name": "Traps" },
+  { "id": "abdominals", "name": "Abdominals" },
+  { "id": "quadriceps", "name": "Quadriceps" },
+  { "id": "hamstrings", "name": "Hamstrings" },
+  { "id": "glutes", "name": "Glutes" },
+  { "id": "calves", "name": "Calves" }
+]

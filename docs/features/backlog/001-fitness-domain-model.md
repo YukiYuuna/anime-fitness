@@ -6,8 +6,8 @@ priority: high
 effort: L
 blocked_by: []
 owner:
-spec:
-plan:
+spec: docs/superpowers/specs/fitness-domain-model/July_2026/2026-07-26-fitness-domain-model-design.md
+plan: docs/superpowers/plans/fitness-domain-model/July_2026/2026-07-26-fitness-domain-model.md
 ---
 
 ## Summary
@@ -36,3 +36,6 @@ depend on these entities existing and being well-shaped.
   - **wger** — open-source workout manager with an exercise database/API.
 - Open question for the spec: how much of the anime-character theming belongs in
   the domain model vs a layer built on top of it.
+- The committed seed dataset is an intentionally minimal curated subset (13
+  exercises); it can be expanded later via the `import/from-free-exercise-db.ts`
+  tool (see `src/domain/catalog/import/README.md`).

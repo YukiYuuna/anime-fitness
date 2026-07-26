@@ -36,33 +36,40 @@ once Expo/React Native code lands in phase 2.
 │   └── superpowers/
 │       ├── specs/            Design docs produced by the brainstorming skill
 │       └── plans/            Implementation plans produced by the writing-plans skill
-├── types/                    Ambient TypeScript declarations (placeholder.d.ts
-│                              exists only to give tsc a root file pre-phase-2)
+├── src/
+│   └── domain/
+│       └── catalog/          Fitness catalog domain model (Zod schemas, loader, validator, seed)
+├── tests/                    Unit tests (Vitest), mirroring the src/ tree
+│   └── domain/catalog/       Tests for the catalog domain model (+ seed/, import/)
 ├── AGENTS.md                 Single source of truth for workflow/coding rules
 ├── CLAUDE.md                 Pointer to AGENTS.md (Claude Code entry point)
 ├── development_process.md    Lifecycle: how work flows idea→shipped + feature tracking
 ├── PROJECT_CONTEXT.md         This file — architecture map
 ├── README.md                  Human-facing overview
 ├── eslint.config.mjs          ESLint (flat config) + typescript-eslint
+├── vitest.config.ts           Vitest config (test files live under tests/)
 ├── .prettierrc / .prettierignore  Prettier formatting rules
 ├── .editorconfig              Editor-level whitespace/charset defaults
-├── package.json                Scripts: format, format:check, lint, typecheck
+├── package.json                Scripts: format, format:check, lint, typecheck, test
 └── tsconfig.json               TypeScript compiler config
 ```
 
-There is no `src/` yet — the app itself (Expo/React Native, feature-organized
-per AGENTS.md §3) is scaffolded in phase 2. This section gets rewritten with
-real feature folders once that lands.
+`src/domain/catalog/` is the first application code — the fitness catalog domain
+model (feature `001`). Expo/React Native UI scaffolding still comes in a later
+feature; more `src/` feature folders will be added then.
+
+Tests live in a top-level `tests/` tree that **mirrors** the `src/` layout
+(`tests/domain/catalog/` ↔ `src/domain/catalog/`), keeping test files out of the
+source folders. Vitest discovers them via `tests/**/*.test.ts`. They import
+source through the `@/*` → `src/*` path alias (declared in `tsconfig.json` and
+`vitest.config.ts`), so imports read `@/domain/catalog/…` instead of deep
+relative paths.
 
 ## Quirks & constraint-driven decisions
 
 Only decisions that look suboptimal at first glance but were the best option
 given a real constraint go here. Ordinary choices don't need justification.
 
-- **`types/placeholder.d.ts` exists with no real content.** `tsc --noEmit`
-  (used in CI/`npm run typecheck`) needs at least one file to type-check
-  before the app is scaffolded. Delete this once real source files exist —
-  it should not survive into phase 2.
 - **Two AI-assistant config files (`CLAUDE.md`, `AGENTS.md`) instead of one.**
   Claude Code and Codex each look for their own filename by convention;
   duplicating full rules risked drift, so `CLAUDE.md` is a thin pointer to
