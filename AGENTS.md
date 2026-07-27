@@ -54,14 +54,27 @@ restructures a folder, module, or major dependency must update
 - **Stack:** Expo / React Native + TypeScript.
 - **Module boundaries:** organize by feature, not by technical layer. Files that
   change together live together.
-- **Shared code:** cross-feature utilities/components live in a shared location
-  (to be defined when the app is scaffolded in phase 2).
-- This section is intentionally lightweight now and will be deepened when the
-  app is designed.
+- **Navigation:** Expo Router (file-based). Routes live under `src/app/`
+  (`_layout.tsx` for layouts, `(tabs)/` for the tab group).
+- **UI layers:** `src/theme/` holds the dark theme (tokens + `useTheme()`);
+  `src/components/` holds themed base components (`Screen`, `Text`, `Button`).
+  Screens compose base components and must not hardcode colors or spacing —
+  read them from `useTheme()`.
+- **Domain:** `src/domain/` is framework-free (no React/RN imports); UI imports
+  it via the `@/` alias.
 
 ## 4. Testing & Verification
 
-- **Planned framework:** Jest + React Native Testing Library (added in phase 2).
+- **Test frameworks:** the pure-TypeScript domain/theme-token layer uses
+  **Vitest** (`npm run test`). React Native component/UI render tests use
+  jest-expo + React Native Testing Library, introduced with the first real
+  screen feature (`003`). Use Vitest for anything that isn't a rendered RN
+  component.
+- **Test location:** tests live in a top-level `tests/` tree that **mirrors**
+  `src/` (e.g. `src/domain/catalog/exercise.ts` → `tests/domain/catalog/exercise.test.ts`).
+  Do not co-locate `*.test.ts` files next to source. Tests import source via the
+  `@/` alias (e.g. `@/domain/catalog/exercise`), configured in `tsconfig.json`
+  (`paths`) and `vitest.config.ts` (`resolve.alias`) — not deep `../../../` paths.
 - **"Verified" means:** you ran the checks and observed them pass — not that you
   believe they would.
 - **Before opening a PR:** run `npm run lint` and `npm run typecheck` (and
@@ -75,3 +88,8 @@ restructures a folder, module, or major dependency must update
 | `npm run format:check` | Verify formatting without writing |
 | `npm run lint`         | Lint (ESLint + typescript-eslint) |
 | `npm run typecheck`    | Type-check (`tsc --noEmit`)       |
+| `npm run test`         | Run unit tests (Vitest)           |
+| `npm run start`        | Start the Expo dev server         |
+| `npm run ios`          | Start Expo and open iOS           |
+| `npm run android`      | Start Expo and open Android       |
+| `npm run web`          | Start Expo in the browser         |
