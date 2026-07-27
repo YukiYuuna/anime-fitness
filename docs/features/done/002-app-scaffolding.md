@@ -6,8 +6,8 @@ priority: high
 effort: L
 blocked_by: []
 owner:
-spec:
-plan:
+spec: docs/superpowers/specs/app-scaffolding/July_2026/2026-07-27-app-scaffolding-design.md
+plan: docs/superpowers/plans/app-scaffolding/July_2026/2026-07-27-app-scaffolding.md
 ---
 
 ## Summary

@@ -22,7 +22,12 @@
       "Bash(python3 -c \"import json;print\\(json.dumps\\(json.load\\(open\\('src/domain/catalog/seed/regimes.json'\\)\\),indent=0\\)\\)\")",
       "Bash(python3 *)",
       "Bash(npx vitest *)",
-      "Bash(echo \"EXIT:$?\")"
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(npx expo-doctor *)",
+      "Bash(npm ls *)",
+      "Bash(npx expo *)",
+      "Bash(node -e \"console.log\\(require\\('react/package.json'\\).version\\)\")",
+      "Bash(npx tsc *)"
     ]
   }
 }
