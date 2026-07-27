@@ -2,11 +2,6 @@
 
 <!-- What does this PR change and why? -->
 
-## Contributor
-
-- [ ] Claude Code
-- [ ] Codex
-
 ## Checklist
 
 - [ ] Branch named per convention (`feat/…`, `fix/…`, etc.)

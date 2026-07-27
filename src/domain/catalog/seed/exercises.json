@@ -1,0 +1,184 @@
+[
+  {
+    "id": "barbell-bench-press",
+    "name": "Barbell Bench Press",
+    "primaryMuscleIds": ["chest"],
+    "secondaryMuscleIds": ["triceps", "shoulders"],
+    "equipmentIds": ["barbell"],
+    "movementCategory": "push",
+    "difficulty": "intermediate",
+    "trainedAttributes": ["strength", "power"],
+    "instructions": [
+      "Lie flat on the bench and grip the bar slightly wider than shoulder width.",
+      "Lower the bar to mid-chest, then press it back up to full extension."
+    ]
+  },
+  {
+    "id": "barbell-back-squat",
+    "name": "Barbell Back Squat",
+    "primaryMuscleIds": ["quadriceps"],
+    "secondaryMuscleIds": ["glutes", "hamstrings", "lower-back"],
+    "equipmentIds": ["barbell"],
+    "movementCategory": "legs",
+    "difficulty": "intermediate",
+    "trainedAttributes": ["strength", "power"],
+    "instructions": [
+      "Rest the bar across your upper back and stand with feet shoulder-width apart.",
+      "Descend until thighs are at least parallel, then drive up through your heels."
+    ]
+  },
+  {
+    "id": "conventional-deadlift",
+    "name": "Conventional Deadlift",
+    "primaryMuscleIds": ["lower-back", "hamstrings", "glutes"],
+    "secondaryMuscleIds": ["quadriceps", "traps", "forearms"],
+    "equipmentIds": ["barbell"],
+    "movementCategory": "full_body",
+    "difficulty": "intermediate",
+    "trainedAttributes": ["strength", "power"],
+    "instructions": [
+      "Stand with mid-foot under the bar and grip just outside your knees.",
+      "Drive through the floor and stand tall, keeping the bar close to your body."
+    ]
+  },
+  {
+    "id": "pull-up",
+    "name": "Pull-Up",
+    "primaryMuscleIds": ["lats"],
+    "secondaryMuscleIds": ["biceps", "middle-back"],
+    "equipmentIds": ["body-only"],
+    "movementCategory": "pull",
+    "difficulty": "intermediate",
+    "trainedAttributes": ["strength"],
+    "instructions": [
+      "Hang from the bar with an overhand grip.",
+      "Pull your chin over the bar, then lower under control."
+    ]
+  },
+  {
+    "id": "push-up",
+    "name": "Push-Up",
+    "primaryMuscleIds": ["chest"],
+    "secondaryMuscleIds": ["triceps", "shoulders"],
+    "equipmentIds": ["body-only"],
+    "movementCategory": "push",
+    "difficulty": "beginner",
+    "trainedAttributes": ["strength", "endurance"],
+    "instructions": [
+      "Start in a plank with hands under your shoulders.",
+      "Lower your chest to the floor, then press back up."
+    ]
+  },
+  {
+    "id": "overhead-press",
+    "name": "Standing Overhead Press",
+    "primaryMuscleIds": ["shoulders"],
+    "secondaryMuscleIds": ["triceps"],
+    "equipmentIds": ["barbell"],
+    "movementCategory": "push",
+    "difficulty": "intermediate",
+    "trainedAttributes": ["strength"],
+    "instructions": [
+      "Hold the bar at shoulder height with a shoulder-width grip.",
+      "Press overhead to full lockout, then lower to the shoulders."
+    ]
+  },
+  {
+    "id": "barbell-row",
+    "name": "Bent-Over Barbell Row",
+    "primaryMuscleIds": ["middle-back"],
+    "secondaryMuscleIds": ["lats", "biceps"],
+    "equipmentIds": ["barbell"],
+    "movementCategory": "pull",
+    "difficulty": "intermediate",
+    "trainedAttributes": ["strength"],
+    "instructions": [
+      "Hinge at the hips with a flat back, holding the bar at arm's length.",
+      "Row the bar to your lower ribs, then lower under control."
+    ]
+  },
+  {
+    "id": "plank",
+    "name": "Plank",
+    "primaryMuscleIds": ["abdominals"],
+    "secondaryMuscleIds": ["lower-back"],
+    "equipmentIds": ["body-only"],
+    "movementCategory": "core",
+    "difficulty": "beginner",
+    "trainedAttributes": ["endurance"],
+    "instructions": [
+      "Rest on your forearms and toes with a straight body line.",
+      "Brace your core and hold."
+    ]
+  },
+  {
+    "id": "dumbbell-biceps-curl",
+    "name": "Dumbbell Biceps Curl",
+    "primaryMuscleIds": ["biceps"],
+    "secondaryMuscleIds": ["forearms"],
+    "equipmentIds": ["dumbbell"],
+    "movementCategory": "pull",
+    "difficulty": "beginner",
+    "trainedAttributes": ["strength"],
+    "instructions": [
+      "Hold a dumbbell in each hand with palms forward.",
+      "Curl to the shoulders, then lower slowly."
+    ]
+  },
+  {
+    "id": "walking-lunge",
+    "name": "Walking Lunge",
+    "primaryMuscleIds": ["quadriceps", "glutes"],
+    "secondaryMuscleIds": ["hamstrings"],
+    "equipmentIds": ["body-only"],
+    "movementCategory": "legs",
+    "difficulty": "beginner",
+    "trainedAttributes": ["strength", "endurance"],
+    "instructions": [
+      "Step forward into a lunge until both knees are ~90 degrees.",
+      "Push off the front foot and step through into the next lunge."
+    ]
+  },
+  {
+    "id": "standing-calf-raise",
+    "name": "Standing Calf Raise",
+    "primaryMuscleIds": ["calves"],
+    "secondaryMuscleIds": [],
+    "equipmentIds": ["body-only"],
+    "movementCategory": "legs",
+    "difficulty": "beginner",
+    "trainedAttributes": ["strength"],
+    "instructions": [
+      "Stand tall on the balls of your feet.",
+      "Raise your heels as high as possible, then lower slowly."
+    ]
+  },
+  {
+    "id": "jumping-jacks",
+    "name": "Jumping Jacks",
+    "primaryMuscleIds": ["calves"],
+    "secondaryMuscleIds": ["shoulders"],
+    "equipmentIds": ["body-only"],
+    "movementCategory": "full_body",
+    "difficulty": "beginner",
+    "trainedAttributes": ["endurance", "speed"],
+    "instructions": [
+      "Jump while spreading your legs and raising your arms overhead.",
+      "Return to standing and repeat rhythmically."
+    ]
+  },
+  {
+    "id": "standing-hamstring-stretch",
+    "name": "Standing Hamstring Stretch",
+    "primaryMuscleIds": ["hamstrings"],
+    "secondaryMuscleIds": ["lower-back"],
+    "equipmentIds": ["body-only"],
+    "movementCategory": "legs",
+    "difficulty": "beginner",
+    "trainedAttributes": ["mobility"],
+    "instructions": [
+      "Hinge forward at the hips, reaching toward your toes.",
+      "Hold at a gentle stretch without bouncing."
+    ]
+  }
+]

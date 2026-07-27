@@ -4,6 +4,12 @@ This is the **single source of truth** for how this repository is built. It is
 read by every AI assistant (Claude Code, Codex) and human contributor. Read it
 fully before doing any work.
 
+For the architecture map (folder structure, what each folder is for, and
+constraint-driven decisions), see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md).
+**Keep it updated**: any change that adds, removes, or meaningfully
+restructures a folder, module, or major dependency must update
+`PROJECT_CONTEXT.md` in the same PR/commit.
+
 > The app is **Expo / React Native + TypeScript**, iOS-first with Android
 > planned. Phase 1 (current) sets up collaboration tooling; the app itself is
 > phase 2.
@@ -25,6 +31,9 @@ fully before doing any work.
   scoped so the two contributors rarely touch the same files.
 - **Definition of done:** `npm run lint`, `npm run typecheck`, and (once tests
   exist) `npm run test` all pass; PR template complete; scope described.
+- **Feature tracking:** every feature is a card in `docs/features/`
+  (`backlog/` → `in-progress/` → `done/`). See
+  [development_process.md](./development_process.md) for the full lifecycle.
 
 ## 2. Coding Standards
 
@@ -45,14 +54,27 @@ fully before doing any work.
 - **Stack:** Expo / React Native + TypeScript.
 - **Module boundaries:** organize by feature, not by technical layer. Files that
   change together live together.
-- **Shared code:** cross-feature utilities/components live in a shared location
-  (to be defined when the app is scaffolded in phase 2).
-- This section is intentionally lightweight now and will be deepened when the
-  app is designed.
+- **Navigation:** Expo Router (file-based). Routes live under `src/app/`
+  (`_layout.tsx` for layouts, `(tabs)/` for the tab group).
+- **UI layers:** `src/theme/` holds the dark theme (tokens + `useTheme()`);
+  `src/components/` holds themed base components (`Screen`, `Text`, `Button`).
+  Screens compose base components and must not hardcode colors or spacing —
+  read them from `useTheme()`.
+- **Domain:** `src/domain/` is framework-free (no React/RN imports); UI imports
+  it via the `@/` alias.
 
 ## 4. Testing & Verification
 
-- **Planned framework:** Jest + React Native Testing Library (added in phase 2).
+- **Test frameworks:** the pure-TypeScript domain/theme-token layer uses
+  **Vitest** (`npm run test`). React Native component/UI render tests use
+  jest-expo + React Native Testing Library, introduced with the first real
+  screen feature (`003`). Use Vitest for anything that isn't a rendered RN
+  component.
+- **Test location:** tests live in a top-level `tests/` tree that **mirrors**
+  `src/` (e.g. `src/domain/catalog/exercise.ts` → `tests/domain/catalog/exercise.test.ts`).
+  Do not co-locate `*.test.ts` files next to source. Tests import source via the
+  `@/` alias (e.g. `@/domain/catalog/exercise`), configured in `tsconfig.json`
+  (`paths`) and `vitest.config.ts` (`resolve.alias`) — not deep `../../../` paths.
 - **"Verified" means:** you ran the checks and observed them pass — not that you
   believe they would.
 - **Before opening a PR:** run `npm run lint` and `npm run typecheck` (and
@@ -66,3 +88,8 @@ fully before doing any work.
 | `npm run format:check` | Verify formatting without writing |
 | `npm run lint`         | Lint (ESLint + typescript-eslint) |
 | `npm run typecheck`    | Type-check (`tsc --noEmit`)       |
+| `npm run test`         | Run unit tests (Vitest)           |
+| `npm run start`        | Start the Expo dev server         |
+| `npm run ios`          | Start Expo and open iOS           |
+| `npm run android`      | Start Expo and open Android       |
+| `npm run web`          | Start Expo in the browser         |

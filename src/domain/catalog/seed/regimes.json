@@ -1,0 +1,42 @@
+[
+  {
+    "id": "beginner-full-body",
+    "name": "Beginner Full Body",
+    "description": "A simple full-body session for newcomers.",
+    "entries": [
+      { "exerciseId": "push-up", "sets": 3, "reps": { "min": 8, "max": 12 }, "restSeconds": 60 },
+      {
+        "exerciseId": "walking-lunge",
+        "sets": 3,
+        "reps": { "min": 10, "max": 12 },
+        "restSeconds": 60
+      },
+      {
+        "exerciseId": "barbell-row",
+        "sets": 3,
+        "reps": { "min": 8, "max": 12 },
+        "restSeconds": 90
+      },
+      { "exerciseId": "plank", "sets": 3, "reps": { "min": 1, "max": 1 }, "restSeconds": 45 }
+    ]
+  },
+  {
+    "id": "upper-push",
+    "name": "Upper Body Push",
+    "entries": [
+      {
+        "exerciseId": "barbell-bench-press",
+        "sets": 4,
+        "reps": { "min": 6, "max": 8 },
+        "restSeconds": 120
+      },
+      {
+        "exerciseId": "overhead-press",
+        "sets": 3,
+        "reps": { "min": 8, "max": 10 },
+        "restSeconds": 90
+      },
+      { "exerciseId": "dumbbell-biceps-curl", "sets": 3, "reps": { "min": 10, "max": 12 } }
+    ]
+  }
+]

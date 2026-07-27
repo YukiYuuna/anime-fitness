@@ -3,8 +3,9 @@
 An anime-themed fitness app built with **Expo / React Native + TypeScript**
 (iOS-first, Android planned).
 
-Built collaboratively by two contributors using **Claude Code** and **Codex**.
-All contributor rules live in [AGENTS.md](./AGENTS.md).
+All agent rules live in [AGENTS.md](./AGENTS.md). The architecture map
+(folder structure, decisions) lives in
+[PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md).
 
 ## Status
 
@@ -29,3 +30,5 @@ npm install
 ## Workflow
 
 Feature branches → PR to `main` → review → merge. See [AGENTS.md](./AGENTS.md).
+Features are tracked as cards in `docs/features/`; see
+[development_process.md](./development_process.md) for the lifecycle.
