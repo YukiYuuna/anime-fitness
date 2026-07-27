@@ -21,9 +21,12 @@ build/tooling systems, changed module boundaries, or new services.
 
 ## Current status
 
-**Phase 1 — collaboration tooling.** The application itself has not been
-scaffolded yet (see [AGENTS.md](./AGENTS.md)). This section will be rewritten
-once Expo/React Native code lands in phase 2.
+**Phase 2 — app scaffolded.** The Expo / React Native app shell is in place
+(feature `002`): Expo Router navigation (`src/app/`), a single dark theme
+(`src/theme/`), base components (`src/components/`), and a two-tab skeleton
+(Home + Library). The framework-free domain model (`src/domain/catalog/`,
+feature `001`) is consumed by screens via the `@/` alias. Real screen content
+(exercise browsing, etc.) is built in subsequent features.
 
 ## Folder structure
 
@@ -37,12 +40,17 @@ once Expo/React Native code lands in phase 2.
 │       ├── specs/            Design docs produced by the brainstorming skill
 │       └── plans/            Implementation plans produced by the writing-plans skill
 ├── src/
+│   ├── app/                  Expo Router routes (file-based): _layout + (tabs)/
+│   ├── components/           Themed base components (Screen, Text, Button)
+│   ├── theme/                Dark theme tokens + ThemeProvider + useTheme()
 │   └── domain/
 │       └── catalog/          Fitness catalog domain model (Zod schemas, loader, validator, seed)
 ├── tests/                    Unit tests (Vitest), mirroring the src/ tree
 │   └── domain/catalog/       Tests for the catalog domain model (+ seed/, import/)
 ├── AGENTS.md                 Single source of truth for workflow/coding rules
 ├── CLAUDE.md                 Pointer to AGENTS.md (Claude Code entry point)
+├── app.json                  Expo app manifest (name, scheme, expo-router plugin)
+├── babel.config.cjs          Babel (babel-preset-expo); .cjs because pkg is type:module
 ├── development_process.md    Lifecycle: how work flows idea→shipped + feature tracking
 ├── PROJECT_CONTEXT.md         This file — architecture map
 ├── README.md                  Human-facing overview
@@ -54,9 +62,11 @@ once Expo/React Native code lands in phase 2.
 └── tsconfig.json               TypeScript compiler config
 ```
 
-`src/domain/catalog/` is the first application code — the fitness catalog domain
-model (feature `001`). Expo/React Native UI scaffolding still comes in a later
-feature; more `src/` feature folders will be added then.
+The app is an Expo / React Native app using **Expo Router** (file-based routes
+under `src/app/`). `src/domain/` holds framework-free domain logic (feature
+`001`); `src/theme/` and `src/components/` provide the dark theme and base UI
+primitives (feature `002`). Screens compose base components and read domain data
+via the `@/` alias.
 
 Tests live in a top-level `tests/` tree that **mirrors** the `src/` layout
 (`tests/domain/catalog/` ↔ `src/domain/catalog/`), keeping test files out of the
