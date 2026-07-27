@@ -5,7 +5,29 @@
       "Bash(npm install *)",
       "Bash(echo \"---EXIT: $?---\")",
       "Bash(echo \"lint exit: $?\")",
-      "Bash(echo \"typecheck exit: $?\")"
+      "Bash(echo \"typecheck exit: $?\")",
+      "Bash($SKILL/scripts/task-brief $PLAN *)",
+      "Bash(prettier *)",
+      "Bash(grep *)",
+      "Bash(npx prettier *)",
+      "Bash(git ls-tree *)",
+      "Bash(gh repo *)",
+      "Bash(gh api *)",
+      "Bash(npm -v)",
+      "Bash(npm view *)",
+      "Bash(xargs -I{} echo {})",
+      "Bash(python3 -c \"import json;print\\([m['id'] for m in json.load\\(open\\('src/domain/catalog/seed/muscle-groups.json'\\)\\)]\\)\")",
+      "Bash(python3 -c \"import json;print\\([m['id'] for m in json.load\\(open\\('src/domain/catalog/seed/equipment.json'\\)\\)]\\)\")",
+      "Bash(python3 -c \"import json;d=json.load\\(open\\('src/domain/catalog/seed/exercises.json'\\)\\);print\\(len\\(d\\)\\);print\\([m['id'] for m in d]\\)\")",
+      "Bash(python3 -c \"import json;print\\(json.dumps\\(json.load\\(open\\('src/domain/catalog/seed/regimes.json'\\)\\),indent=0\\)\\)\")",
+      "Bash(python3 *)",
+      "Bash(npx vitest *)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(npx expo-doctor *)",
+      "Bash(npm ls *)",
+      "Bash(npx expo *)",
+      "Bash(node -e \"console.log\\(require\\('react/package.json'\\).version\\)\")",
+      "Bash(npx tsc *)"
     ]
   }
 }
